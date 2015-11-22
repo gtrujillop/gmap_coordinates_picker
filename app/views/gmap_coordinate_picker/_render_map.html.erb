@@ -37,7 +37,8 @@
       setMarker();
     }
 
-    google.maps.event.addDomListener(document.getElementById("<%=map_container%>"), 'click', function() {
+    $("#<%=map_container%>").one('click', function() {
+      console.log("Resizing");
       resizeMap();
     });
   }
