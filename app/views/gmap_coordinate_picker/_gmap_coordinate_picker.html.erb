@@ -29,7 +29,6 @@
     }
 
     map = new google.maps.Map(map_canvas, map_options);
-    console.log(map)
 
     <%= map_handler %> = map;
     <% if lat_column_value && lng_column_value %>
@@ -64,6 +63,7 @@
 
     function resizeMap(){
       google.maps.event.trigger(map, 'resize');
+      updateLocation(defaultPoint);
       map.setCenter(center);
     }
 
